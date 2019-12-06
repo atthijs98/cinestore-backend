@@ -31,7 +31,7 @@ public class User {
     private String password;
 
     @JsonProperty
-    private String user_role;
+    UserRole user_role;
 
     @JsonProperty
     private Timestamp created_at;
@@ -53,7 +53,7 @@ public class User {
      * @param created_at
      * @param updated_at
      */
-    public User(int user_id, String uuid, String email, String first_name, String middle_name, String last_name, Date date_of_birth, String password, String user_role, Timestamp created_at, Timestamp updated_at) {
+    public User(int user_id, String uuid, String email, String first_name, String middle_name, String last_name, Date date_of_birth, String password, UserRole user_role, Timestamp created_at, Timestamp updated_at) {
         this.user_id = user_id;
         this.uuid = uuid;
         this.email = email;
@@ -78,7 +78,7 @@ public class User {
      * @param password
      * @param user_role
      */
-    public User(String uuid, String email, String first_name, String middle_name, String last_name, Date date_of_birth, String password, String user_role) {
+    public User(String uuid, String email, String first_name, String middle_name, String last_name, Date date_of_birth, String password, UserRole user_role) {
         this.uuid = uuid;
         this.email = email;
         this.first_name = first_name;
@@ -141,11 +141,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUser_role() {
+    public UserRole getUser_role() {
         return user_role;
     }
 
-    public void setUser_role(String user_role) {
+    public void setUser_role(UserRole user_role) {
         this.user_role = user_role;
     }
 

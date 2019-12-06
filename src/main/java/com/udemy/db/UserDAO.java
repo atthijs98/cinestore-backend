@@ -25,4 +25,6 @@ public interface UserDAO {
             "(:email, :first_name, :middle_name, :last_name, :date_of_birth, :password, :user_role, :uuid)")
     int insert(@BindBean User user);
 
+    @SqlQuery("select * from user where email = :email")
+    User findByEmail(@Bind("email") String email);
 }
