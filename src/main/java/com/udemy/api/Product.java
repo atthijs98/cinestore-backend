@@ -8,7 +8,11 @@ public class Product {
     @JsonProperty
     private int id;
     @JsonProperty
-    private String name;
+    private String international_title;
+    @JsonProperty
+    private String original_title;
+    @JsonProperty
+    private String romanized_title;
     @JsonProperty
     private String runtime;
     @JsonProperty
@@ -29,7 +33,9 @@ public class Product {
     /**
      * GET constructor
      * @param id
-     * @param name
+     * @param international_title
+     * @param original_title
+     * @param romanized_title
      * @param runtime
      * @param poster
      * @param plot
@@ -39,9 +45,11 @@ public class Product {
      * @param created_at
      * @param updated_at
      */
-    public Product(int id, String name, String runtime, String poster, String plot, String year, double price, int in_stock, Timestamp created_at, Timestamp updated_at) {
+    public Product(int id, String international_title, String original_title, String romanized_title, String runtime, String poster, String plot, String year, double price, int in_stock, Timestamp created_at, Timestamp updated_at) {
         this.id = id;
-        this.name = name;
+        this.international_title = international_title;
+        this.original_title = original_title;
+        this.romanized_title = romanized_title;
         this.runtime = runtime;
         this.poster = poster;
         this.plot = plot;
@@ -52,8 +60,10 @@ public class Product {
         this.updated_at = updated_at;
     }
 
-    public Product(String name, String runtime, String poster, String plot, String year, double price) {
-        this.name = name;
+    public Product(String international_title,String original_title, String romanized_title, String runtime, String poster, String plot, String year, double price) {
+        this.international_title = international_title;
+        this.original_title = original_title;
+        this.romanized_title = romanized_title;
         this.runtime = runtime;
         this.poster = poster;
         this.plot = plot;
@@ -65,12 +75,28 @@ public class Product {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getInternational_title() {
+        return international_title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInternational_title(String international_title) {
+        this.international_title = international_title;
+    }
+
+    public String getOriginal_title() {
+        return original_title;
+    }
+
+    public void setOriginal_title(String original_title) {
+        this.original_title = original_title;
+    }
+
+    public String getRomanized_title() {
+        return romanized_title;
+    }
+
+    public void setRomanized_title(String romanized_title) {
+        this.romanized_title = romanized_title;
     }
 
     public String getRuntime() {
