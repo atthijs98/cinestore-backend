@@ -19,6 +19,6 @@ public interface ProductDAO {
     @SqlQuery("select * from product where id = :product_id")
     Product findById(@Bind("product_id") int product_id);
 
-    @SqlUpdate("insert into product (international_title, original_title, romanized_title, runtime, poster, plot, year, price) values (:en_title,:original_title, :romanized_original_title, :runtime, :poster, :plot, :year, :price)")
+    @SqlUpdate("insert into product (international_title, original_title, romanized_title, runtime, poster, plot, year, price) values (:international_title,:original_title, :romanized_title, :runtime, :poster, :plot, :year, :price)")
     int insert(@BindBean Product product);
 }
